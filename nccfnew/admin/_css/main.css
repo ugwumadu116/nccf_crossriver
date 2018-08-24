@@ -1,0 +1,328 @@
+/* ==== CSS Variables ==== */
+:root {
+	--primary: #17326E;
+	--dark: #333333;
+	--light: #eceff1;
+	--fontPrimary: 'Lato', sans-serif;
+	--fontHeader: 'Poppins', sans-serif;
+}
+
+
+/* ==== Resets ==== */
+* {
+	box-sizing: border-box;
+}
+
+body, article, section, h3, h5, p {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* ==== Global Styles ==== */
+body {
+	font-family: var(--fontPrimary);
+	font-size: 62.5%;
+	color: var(--dark);
+}
+
+p {
+	font-size: 1rem;
+}
+
+h3, h5 {
+	font-family: var(--fontHeader);
+}
+
+h3 {
+	font-weight: 600;
+	color: var(--primary);
+}
+
+h5 {
+	margin-bottom: .6em;
+}
+
+
+/* ==== Dashboard Globals ==== */
+
+/* Side Nav */
+#main-nav {
+	overflow: hidden;
+	box-shadow: none;
+	border-right: .15rem solid var(--light);
+}
+
+#main-nav li.link-item {
+	border-bottom: .15rem solid var(--light);
+}
+
+#main-nav li.link-item a {
+	font-weight: bold;
+}
+
+#main-nav li.link-item a.active {
+	background: var(--primary);
+	color: #fff;
+	font-weight: bold;
+}
+
+#main-nav li.logo {
+	text-align: center;
+	height: 10.9rem;
+	border-bottom: .1rem solid var(--light);
+}
+
+#logo-container, #logo-container:hover {
+	height: 11rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	background: none;
+	cursor: pointer;
+}
+
+#logo-container img {
+	width: 16rem;
+}
+
+#main-nav footer {
+	width: 100%;
+	border-top: .15rem solid var(--light);
+	padding: 1rem 1.5rem 2.2rem;
+	position: fixed;
+	bottom: 3rem;
+}
+
+#main-nav footer p {
+	float: left;
+}
+
+#main-nav footer a {
+	font-size: 1rem;
+	text-decoration: none;
+	color: #ee4033;
+	font-weight: bold;
+	float: right;
+}
+/* Body */
+main {
+	padding-left: 20rem;
+	padding-top: 0;
+}
+
+header {
+	padding: 2rem 4rem .5rem;
+	border-bottom: .1rem solid var(--light);
+}
+
+#admin-panel {
+	padding: 2rem 4rem 0;
+}
+
+section.update-section {
+	width: 80%;
+	padding: 2rem;
+	border: .1rem solid var(--light);
+	margin-bottom: 2rem;
+}
+
+section.update-section .btn {
+	background-color: var(--primary);
+}
+
+section.update-section .input-field input[type=text]:focus,
+section.update-section .input-field textarea:focus {
+    border-bottom: .1rem solid var(--primary);
+    box-shadow: none;
+}
+
+
+section.update-section .input-field input[type=text].invalid {
+     border-bottom: .1rem solid #F44336;
+     box-shadow: none;
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:before,
+[type="radio"].with-gap:checked+span:after {
+	border: .1rem solid var(--primary);
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:after {
+	background-color: var(--primary);
+}
+
+div.modal:focus {
+	outline: 0;
+	border: none;
+}
+
+div.modal .modal-content {
+	text-align: center;
+	background: #fff;
+	border: .2rem solid var(--light);
+}
+
+div.modal .modal-content img {
+	width: 10rem;
+	margin: 1rem 0 1rem;
+}
+
+div.modal .modal-content h3 {
+	margin-bottom: 1rem;
+	color: var(--dark);
+}
+
+div.modal .modal-content p {
+	margin-bottom: 1rem;
+}
+
+div.modal .modal-content .btn {
+	background-color: var(--primary);
+}
+
+/* ==== Zones Paage ==== */
+div.zone {
+	display: flex;
+	width: 80%;
+	border-bottom: .1rem solid var(--light);
+	margin-bottom: 2rem;
+}
+
+div.zone .action {
+	margin-left: auto;
+}
+
+div.zone .update-zone, div.zone .add-zone {
+	float: right;
+	background-color: var(--primary);
+}
+
+div.zone .delete-zone {
+	float: left;
+	margin-right: 1rem;
+	background-color: #c42a23;
+}
+
+
+/* ==== Registered Members Page ==== */
+section.table {
+	width: 100%;
+	padding: 0 2rem 2rem;
+}
+
+section.table th, section.table td {
+	font-size: 1rem;
+}
+
+section.table a:link, section.table a:visited {
+	color: var(--primary);
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+
+/* ==== Registered Members Page ==== */
+section.user-details-wrapper {
+	padding-top: 3rem;
+	width: 100%;
+	display: grid;
+	grid-template-areas: 'profile-img profile';
+}
+
+section.user-profile-img {
+	grid-area: profile-img;
+	max-width: 55rem;
+	text-align: center;
+}
+
+section.user-profile-img img {
+	height: 15rem;
+	border-radius: 100%;
+	margin: 0 1rem;
+	border: .1rem solid var(--primary);
+}
+
+section.user-details {
+	grid-area: profile;
+	line-height: 2;
+}
+
+section.user-details h3 {
+	color: var(--dark);
+	margin-bottom: .3rem;
+}
+
+section.user-details-wrapper span.user-details-header,
+section.user-questions-wrapper span.user-questions-header {
+	font-weight: bold;
+}
+
+section.user-questions-wrapper {
+	width: 100%;
+}
+
+section.user-questions-wrapper p {
+	margin-bottom: 1rem;
+}
+
+/* ==== Admin Login Page ==== */
+#login-wrapper {
+	height: 100vh;
+	padding-top: 3rem;
+	padding-left: 0;
+}
+
+section.form-wrapper {
+	margin-top: 3rem;
+	padding: 3rem 4rem 0;
+	width: 35rem;
+	border: .15rem solid var(--light);
+}
+
+section.form-wrapper .row, section.form-wrapper .col {
+	float: none;
+}
+
+section.form-wrapper h3 {
+	color: var(--dark);
+	position: relative;
+	padding-bottom: .8rem;
+	margin-bottom: 2.5rem;
+	font-family: var(--fontHeader);
+}
+
+section.form-wrapper h3:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 10%;
+  content: '.';
+  color: transparent;
+  background: var(--primary);
+  height: .35rem;
+}
+
+section.form-wrapper h6 {
+	margin-bottom: 2rem;
+	font-size: medium;
+	font-weight: bold;
+}
+
+section.form-wrapper .btn {
+	background-color: var(--primary);
+}
+
+section.form-wrapper .input-field input[type=text]:focus + label,
+section.form-wrapper .input-field input[type=password]:focus + label {
+	color: var(--primary);
+}
+
+section.form-wrapper .input-field input[type=text]:focus,
+section.form-wrapper .input-field input[type=password]:focus {
+    border-bottom: .1rem solid var(--primary);
+    box-shadow: none;
+}

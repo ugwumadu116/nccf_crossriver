@@ -1,0 +1,548 @@
+ /* ==== Font Declaration ==== */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poppins:700,800,900');
+
+/* ==== CSS Variables ==== */
+:root {
+	--primary: #17326E;
+	--dark: #222222;
+	--light: #ffffff;
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+	--fontPrimary: 'Lato', sans-serif;
+	--fontSecondary: 'Work Sans', sans-serif;
+	--fontHeader: 'Poppins', sans-serif;
+}
+
+/* ==== Resets ==== */
+* {
+	box-sizing: border-box;
+}
+
+body, h6, h4, h2, p {
+	margin: 0;
+	border: 0;
+}
+
+/* ==== Clearfix ==== */
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+
+/* ==== Global Styles ==== */
+body {
+	font-family: var(--fontPrimary);
+	font-size: 62.5%;
+	color: #555;
+}
+
+/* ==== Header ==== */
+header {
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+}
+/* - Navigation - */
+nav {
+	background:  var(--light);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10em;
+	padding: 0 10em 0 10em;
+	display: flex;
+	z-index: 1;
+  	box-shadow: 0 .2em 0 #dedede;
+  	transition: all .5s;
+}
+
+nav.navScroll {
+	background:  var(--light);
+	height: 6em;
+	padding: 0 10em;
+}
+
+.siteLogo img {
+	height: 10em;
+	padding: 1em;
+  	transition: all .5s;
+}
+
+nav.navScroll .siteLogo img {
+	height: 6em;
+	padding: 1em;
+}
+
+nav ul#navMenu {
+	font-family: var(--fontHeader);
+	font-size: 1.5em;
+	font-weight: 900;
+	line-height: 4.5em;
+	margin-left: auto;
+}
+
+nav.navScroll ul#navMenu {
+	font-size: 1em;
+}
+
+nav ul li {
+	list-style: none;
+	margin-right: 2em;
+	float: left;
+}
+
+nav ul li a:link, nav ul li a:visited {
+	position: relative;
+  	padding: .5em .3em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color:  var(--dark);
+  	transition: all .5s;
+}
+
+nav ul li a:after, nav ul li a:before {
+  	transition: all .5s;
+}
+
+nav ul li a:after,
+nav ul li a:visited:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: var(--primary);
+  height: 4px;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+nav ul li a:hover:after {
+  width: 100%;
+}
+nav ul li a.current:after {
+  width: 100%;
+}
+
+/* - Slider - */
+.css-slider-wrapper{
+	display: block;
+	background:  var(--light);
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.slider {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 1;
+	z-index: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	-webkit-transition: -webkit-transform 1600ms;
+	transition: -webkit-transform 1600ms, transform 1600ms;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/* - Slider Backgrounds - */
+.slide-1 {
+	background: url(_images/1.jpg) no-repeat center center;
+	left: 0;
+}
+
+.slide-2 {
+	background: url(_images/2.jpg) no-repeat center center;
+	left: 100%;
+}
+
+.slide-3 {
+	background: url(_images/3.jpg) no-repeat center center;
+	left: 200%;
+}
+
+.slider {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.slider-content {
+	width: 60em;
+	padding-left: 10em;
+}
+
+/* - Slider Inner Slide Effect - */
+.slider h2 {
+	color:  var(--light);
+	font-family: var(--fontHeader);
+	font-size: 6em;
+	font-weight: 800;
+	text-transform: capitalize;
+	line-height: 1.2;
+	opacity: 0;
+	-webkit-transform: translateX(50em);
+	transform: translateX(50em);
+	margin-top: 0;
+	letter-spacing: 2px;
+}
+ 
+.slider h4 {
+	font-family: var(--fontSecondary);
+	font-size: 2.2em;
+	color: rgba(51, 51, 51, 0.349);
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1.2;
+	opacity: 0;
+	-webkit-transform: translateX(500px);
+	transform: translateX(500px);
+}
+
+.slider span.blueDot {
+	color: var(--primary);
+	font-family: var(--fontSecondary);
+	font-size: 1.2em;
+}
+
+.btn {
+	background-color:  var(--primary);
+	text-decoration: none;
+	margin-top: .5em;
+	padding: .5em 1em;
+	border-radius: 3em;
+	border: none;
+	font-family: var(--fontPrimary);
+	font-size: 2em;
+	font-weight: bold;
+	color: var(--light);
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	transition: all .2s;
+}
+
+.btn:hover {
+	box-shadow: 0px 0px 60px -17px rgba(51,51,51,1);
+	background: #263d6e;
+	color: #f2f2f2;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* -- Animations -- */
+.slider h2 {
+	-webkit-transition: opacity 800ms, -webkit-transform 800ms;
+	transition: transform 800ms, opacity 800ms;
+	-webkit-transition-delay: 1s; /* Safari */
+	transition-delay: 1s;
+}
+.slider h4 {
+	-webkit-transition: opacity 800ms, -webkit-transform 800ms;
+	transition: transform 800ms, opacity 800ms;
+	-webkit-transition-delay: 1.4s; /* Safari */
+	transition-delay: 1.4s;
+}
+
+/* -- Slider Pagger -- */
+.slider-pagination {
+	position: absolute;
+	bottom: 3em;
+	width: 57.5em;
+	left: 10em;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+}
+
+.slider-pagination label {
+	width: .8em;
+	height: .8em;
+	border-radius: 50%;
+	display: inline-block;
+	background: #fff;
+	margin: 0 1em;
+	cursor: pointer;
+}
+
+/* Slider Pagger Event */
+.slide-radio1:checked ~ .slider-pagination .page1,
+.slide-radio2:checked ~ .slider-pagination .page2,
+.slide-radio3:checked ~ .slider-pagination .page3 {
+  width: 1.4em;
+  height: 1.4em;
+  border: .2em solid var(--primary);
+  background: transparent;
+}
+ 
+/* Slider Slide Effect */
+.slide-radio1:checked ~ .slider {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+.slide-radio2:checked ~ .slider {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.slide-radio3:checked ~ .slider {
+  -webkit-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
+ 
+.slide-radio1:checked ~ .slide-1 h2,
+.slide-radio2:checked ~ .slide-2 h2,
+.slide-radio3:checked ~ .slide-3 h2,
+.slide-radio1:checked ~ .slide-1 h4,
+.slide-radio2:checked ~ .slide-2 h4,
+.slide-radio3:checked ~ .slide-3 h4 {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1
+}
+
+/* ==== Main Content ==== */
+h2.section-header {
+	position: relative;
+	color: var(--dark);
+	font-family:  var(--fontHeader);
+	font-size: 6em;
+	font-weight: 700;
+	padding-bottom: .2em;
+  	margin-bottom: 1em;
+	text-align: center;
+}
+h2.section-header:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 5%;
+  content: '.';
+  color: transparent;
+  background: var(--primary);
+  height: .15em;
+}
+
+.content-wrapper {
+	padding: 0 10em;
+ 	margin-top: 10em;
+}
+
+/* ==== Section A (Quote) ==== */
+.blockquote-centered {
+	margin: 0;
+	padding: 1em 11em; 
+	text-align: center;
+	border: 0;
+	font-size: 2.5em;
+	letter-spacing: .02em;
+	position: relative;
+	background: #17326e14;
+}
+
+.blockquote-centered img {
+	height: 1.5em;
+}
+
+.blockquote-centered small {
+	display: block;
+	font-size: 80%;
+	color: #a4a4a4;
+	padding: 1em 0;
+}
+
+.blockquote-centered small::before {
+	content: '\2014 \00A0';
+}
+
+/* ==== Section B (President's Speech) ==== */
+
+#section-b img {
+	border-radius: 100%;
+	height: 40em;
+	float: left;
+	margin: 0 7em 4em 5em;
+}
+
+#section-b p {
+	font-size: 2em;
+	font-weight: 200;
+	line-height: 1.6;
+}
+
+/* ==== Section C (Executives) ==== */
+
+#section-c {
+	text-align: center;
+}
+
+#image-wrapper {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 2em;
+}
+
+#image-wrapper .btn{
+	text-align: center;
+}
+
+.image-block {
+	width: 30%;
+	text-align: center;
+	padding: 1em .5em;
+}
+
+.image-block img {
+	border-radius: 100%;
+	height: 20em;
+}
+
+.image-block h4 {
+	font-size: 2em;
+	line-height: 1.6;
+	color: var(--dark);
+}
+
+.image-block h6 {
+	font-size: 1.5em;
+}
+
+/* ==== Section D (Donations) ==== */
+
+#section-d {
+	padding: 3em;
+	text-align: center;
+	background:  var(--primary);
+	width: 100%;
+	color: var(--light);
+}
+
+#section-d h2 {
+	color: var(--light);
+}
+
+#section-d h2:after {
+	background: var(--light);
+}
+
+#section-d p {
+	font-size: 2em;
+	font-weight: 200;
+	line-height: 1.6;
+	margin-bottom: 1em;
+}
+
+#section-d .btn {
+	background: var(--light);
+	color: var(--primary);
+}
+
+/* ==== Section E (Map Container) ==== */
+
+
+
+/* ==== Page Footer ==== */
+#page-footer {
+	font-size: 1.5em;
+	font-weight: lighter;
+	line-height: 1.6;
+	background: var(--dark) url(_images/dust.png) repeat;
+	color: var(--light);
+}
+
+#footer-top {
+	padding: 5em 3em 2em;
+	text-align: center;
+}
+
+#footer-social a:link,
+#footer-social a:visited {
+	font-size: 1em;
+	text-decoration: none;
+	color: var(--primary);
+	position: relative;
+	display: inline-block;
+}
+
+#footer-social a:after {
+	content: ""; 
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0;
+}
+
+#footer-social object {
+	height: 3em;
+	margin: 0 .5em;
+	border-radius: 100%;
+}
+
+#footer-social object:hover {
+	background: #3b5998;
+}
+
+#footer-top h4 {
+	font-size: 1.4em;
+	font-family: var(--fontHeader);
+}
+
+#footer-bottom {
+	background: #555;
+	font-size: .7em;
+	font-family: var(--fontSecondary);
+	text-align: center;
+	padding: 1.2em 0;
+}
+/* ==== Media Queries ==== */
+@media only screen and (max-width: 599px) {
+	header {
+		overflow: hidden;
+		width: 100%;
+		height: 100vh;
+	}
+
+	.slider h2 {
+		f
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	body{}
+}
+
+/* Medium devices (landscape tablets, 900px and up) */
+@media only screen and (min-width: 900px) {
+	body{}
+}
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	body{}
+}
